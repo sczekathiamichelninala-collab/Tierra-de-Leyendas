@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tierra de Leyendas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FUENTE -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Cinzel', serif;
+      background: #cecda4;
+      color: #21392b;
+    }
+
+    /* COLORES BASE */
+    .bg-verde {
+      background-color: #21392b;
+      color: #caa77a;
+    }
+
+    .bg-marron {
+      background-color: #391107;
+      color: #caa77a;
+    }
+
+    .bg-morado {
+      background-color: #302851;
+      color: #caa77a;
+    }
+
+    .text-dorado {
+      color: #caa77a;
+    }
+
+    .btn-leyenda {
+      background-color: #caa77a;
+      color: #391107;
+      font-weight: bold;
+      border: none;
+    }
+
+    .section-space {
+      padding: 90px 0;
+    }
+
+    .card-leyenda {
+      background: #302851;
+      border-radius: 18px;
+      padding: 25px;
+      color: #caa77a;
+      box-shadow: 0 10px 25px #00000040;
+      height: 100%;
+    }
+
+    /* HERO */
+    .hero {
+      background-color: #302851;
+      color: #caa77a;
+      padding: 140px 0;
+      text-align: center;
+    }
+
+    /* TEAM INTERACTIVO */
+    .team-card {
+      background: #391107;
+      padding: 20px;
+      text-align: center;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      color: #caa77a;
+    }
+
+    .team-card:hover {
+      transform: scale(1.03);
+    }
+
+    .team-card.active {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px #caa77a90;
+    }
+
+    .team-info {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.4s ease;
+      margin-top: 10px;
+    }
+
+    .team-info.show {
+      max-height: 200px;
+      opacity: 1;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid #caa77a;
+      object-fit: cover;
+    }
+
+    /* BOTÓN FIJO */
+    .btn-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #caa77a;
+      color: #391107;
+      padding: 15px 25px;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 0 15px #00000060;
+      z-index: 9999;
+    }
+    .hero-slide {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  background: rgba(48, 40, 81, 0.7); /* morado oscuro translúcido */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #caa77a;
+}
+  </style>
+</head>
+<script>
+  const aboutCarousel = document.querySelector('#aboutCarousel');
+  const carousel = new bootstrap.Carousel(aboutCarousel, {
+    interval: 3000,   // cada 3 segundos
+    ride: 'carousel',
+    pause: false
+  });
+</script>
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg bg-verde fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-dorado fw-bold" href="#">Tierra de Leyendas</a>
+    <div class="collapse navbar-collapse show">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-dorado" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link text-dorado" href="#personajes">Personajes</a></li>
+        <li class="nav-item"><a class="nav-link text-dorado" href="#equipo">Equipo</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id="inicio">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <!-- INDICADORES -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="carousel-inner">
+
+      <!-- SLIDE 1 -->
+      <div class="carousel-item active">
+        <div class="hero-slide" style="background-image: url('https://via.placeholder.com/1600x900');">
+          <div class="hero-overlay">
+            <div class="container text-center">
+              <h1 class="display-4 fw-bold">Tierra de Leyendas</h1>
+              <p>Un juego de mesa inspirado en mitos antiguos.</p>
+              <a href="https://wa.me/59175004904?text=Hola%20quiero%20comprar%20el%20juego%20Tierra%20de%20Leyendas" class="btn btn-leyenda" target="_blank">Comprar ahora
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="carousel-item">
+        <div class="hero-slide" style="background-image: url('https://via.placeholder.com/1600x900');">
+          <div class="hero-overlay">
+            <div class="container text-center">
+              <h1 class="display-4 fw-bold">Revive las leyendas</h1>
+              <p>Cartas, tablero y misterios.</p>
+              <a href="#personajes" class="btn btn-leyenda mt-3">Ver personajes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="carousel-item">
+        <div class="hero-slide" style="background-image: url('https://via.placeholder.com/1600x900');">
+          <div class="hero-overlay">
+            <div class="container text-center">
+              <h1 class="display-4 fw-bold">Un juego para la familia</h1>
+              <p>Historias que vuelven a la mesa.</p>
+              <a href="#equipo" class="btn btn-leyenda mt-3">Conocer el equipo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTROLES -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+</section>
+
+<!-- ABOUT CON CARRUSEL DE IMÁGENES -->
+<section class="section-space">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- TEXTO -->
+      <div class="col-md-6">
+        <h2>Sobre el juego</h2>
+        <p>
+          Tierra de Leyendas es un juego de mesa físico donde los jugadores viajan
+          por mitos antiguos, enfrentándose a retos, trivias y decisiones.
+        </p>
+        <a href="#comprar" class="btn btn-leyenda">Comprar ahora</a>
+      </div>
+
+      <!-- CARRUSEL -->
+      <div class="col-md-6">
+        <div id="aboutCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+          <div class="carousel-inner rounded overflow-hidden shadow">
+
+            <div class="carousel-item active">
+              <img src="https://via.placeholder.com/500x350" class="d-block w-100" alt="Juego 1">
+            </div>
+
+            <div class="carousel-item">
+              <img src="https://via.placeholder.com/500x350" class="d-block w-100" alt="Juego 2">
+            </div>
+
+            <div class="carousel-item">
+              <img src="https://via.placeholder.com/500x350" class="d-block w-100" alt="Juego 3">
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAJES -->
+<section class="section-space bg-morado" id="personajes">
+  <div class="container">
+    <h2 class="text-center text-dorado">Personajes</h2>
+
+    <div class="row mt-5 g-4">
+      <div class="col-md-4">
+        <div class="card-leyenda text-center">
+          <h4>El Guardián</h4>
+          <p>Protector de los secretos antiguos.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card-leyenda text-center">
+          <h4>La Caminante</h4>
+          <p>Exploradora de los pueblos olvidados.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card-leyenda text-center">
+          <h4>El Mensajero</h4>
+          <p>Portador de historias sagradas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ EQUIPO DE TRABAJO INTERACTIVO -->
+<section class="section-space" id="equipo">
+  <div class="container">
+    <h2 class="text-center">Equipo de Trabajo</h2>
+
+    <div class="row mt-5 g-4 text-center">
+
+      <div class="col-md-3">
+        <div class="team-card" onclick="mostrarEquipo(1)">
+          <img src="Imagenes/EALIN.png" class="avatar mx-auto">
+          <h6 class="mt-3">EALEEN</h6>
+          <div class="team-info" id="team-1">
+            <p>🎨 Directora Creativa</p>
+            <p>Creadora del concepto del juego.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="team-card" onclick="mostrarEquipo(2)">
+          <img src="Imagenes/nina.png" class="avatar mx-auto">
+          <h6 class="mt-3">NINA</h6>
+          <div class="team-info" id="team-2">
+            <p>🖌 Diseño artístico</p>
+            <p>Creación visual de personajes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="team-card" onclick="mostrarEquipo(3)">
+          <img src="https://via.placeholder.com/150" class="avatar mx-auto">
+          <h6 class="mt-3">Sara</h6>
+          <div class="team-info" id="team-3">
+            <p>🧩 Mecánicas</p>
+            <p>Reglas y estructura del juego.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="team-card" onclick="mostrarEquipo(4)">
+          <img src="https://via.placeholder.com/150" class="avatar mx-auto">
+          <h6 class="mt-3">MERLY</h6>
+          <div class="team-info" id="team-4">
+            <p>🏺 Producción</p>
+            <p>Fabricación del juego físico.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPRAR -->
+<section class="section-space bg-verde text-center" id="comprar">
+  <div class="container">
+    <h2 class="text-dorado">Consigue tu juego</h2>
+    <p>Vuelve a vivir las leyendas.</p>
+    <a href="https://wa.me/59175004904" class="btn btn-leyenda btn-lg" target="_blank">
+  COMPRAR
+</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-marron text-center py-4">
+  <p class="text-dorado mb-0">© 2025 Tierra de Leyendas</p>
+</footer>
+
+<!-- BOTÓN FIJO -->
+<a href="https://wa.me/59175004904" class="btn-fixed" target="_blank">
+  🛒 COMPRAR
+</a>
+
+<!-- JS -->
+<script>
+  function mostrarEquipo(id) {
+    document.querySelectorAll('.team-info').forEach(div => {
+      div.classList.remove('show');
+    });
+    document.querySelectorAll('.team-card').forEach(card => {
+      card.classList.remove('active');
+    });
+
+    const info = document.getElementById('team-' + id);
+    info.classList.add('show');
+
+    info.parentElement.classList.add('active');
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
